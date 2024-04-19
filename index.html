@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visual Artist and Set Designer Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* assuming a dark theme from the image */
+    color: #fff;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #222;
+  }
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+  }
+  .nav-links li {
+    padding: 0 1em;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover {
+    color: #2E8B57; /* vibrant color inspired by the image */
+  }
+  .feature-image {
+    width: 100%;
+    height: 75vh;
+    background: url('ArtVisuel2019/IMG_6434.JPG') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .feature-text {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    color: #fff;
+    padding: 1em;
+    max-width: 60%;
+  }
+  .content {
+    padding: 2em;
+  }
+  .portfolio-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+  }
+  .portfolio-item {
+    transition: transform 0.3s;
+  }
+  .portfolio-item:hover {
+    transform: scale(1.05);
+  }
+  footer {
+    padding: 1em;
+    background-color: #222;
+    text-align: center;
+    font-size: 0.8em;
+  }
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>Artist Name</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="feature-image">
+  <div class="feature-text">
+    <h2>Welcome to My World</h2>
+    <p>Discover the depths of visual storytelling through my set designs and artworks.</p>
+  </div>
+</div>
+<div class="content">
+  <section id="portfolio">
+    <h3>Featured Works</h3>
+    <div class="portfolio-preview">
+      <!-- Portfolio items will be placed here -->
+      <div class="portfolio-item">
+        <img src="portfolio-item1.jpg" alt="Project Title">
+        <p>Project Title</p>
+      </div>
+      <!-- Repeat for other portfolio items -->
+    </div>
+  </section>
+  <!-- Additional sections for About, Services, and Contact -->
+</div>
+<footer>
+  &copy; 2024 Artist Name. All rights reserved.
+</footer>
+</body>
+</html>
