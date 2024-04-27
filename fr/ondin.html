@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-<title>Visual Artist and Set Designer Portfolio</title>
+<title>JBP: Ondin</title>
 <style>
   body {
     margin: 0;
@@ -31,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 120px; /* Padding on the sides */
+    padding: 20 20px; /* Padding on the sides */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slight shadow for depth */
   }
 
@@ -51,16 +51,10 @@
     background-color: #E59866; /* Vibrant color for active/hover state */
     color: white;
   }
-  a:active,
-  a:link,
-  a:visited,
-  a:hover {
-    color: white;
-  }
   .feature-image {
     width: 100%;
     height: 75vh;
-    background: url('ArtVisuel2019/home.jpg') no-repeat center center;
+    background: url('../ArtVisuel2019/home.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -233,14 +227,48 @@
 </head>
 <body>
 
-<div class="feature-image">
-  <div class="feature-text">
-    <p><a href="fr/index.html">FRANÇAIS</a>    ||    <a href="en/index.html">ENGLISH</a></p>
-  </div>
-</div>
+<section class="about" id="about">
+  <img src="../Ondin2012/contact.JPG" alt="Intra">
+  <div class="about-text">
+    <h2>Ondin</h2>
+    <!-- Portfolio items will be placed here -->
+    </div>
+</section>
 
+<div class="content">
+  <section id="portfolio">
+    <div class="masonry-grid">
+      <!-- Portfolio items -->
+      <div class="grid-item grid-item--height2">
+        <img src="../ArtVisuel2019/IMG_2224.JPG" alt="Project 1">
+        <p>Project Title 1</p>
+      </div>
+      <div class="grid-item grid-item--height1">
+        <img src="../ArtVisuel2019/IMG_6427.jpg" alt="Project 2">
+        <p>Project Title 2</p>
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../BellesSoeurs2010/IMGP2003.JPG" alt="Project 3">
+        <p>Project Title 3</p>
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../BellesSoeurs2010/IMGP2053.JPG" alt="Project 4">
+        <p>Project Title 4</p>
+      </div>
+      <div class="grid-item grid-item--height1">
+        <img src="../ArtVisuel2019/IMG_6427.jpg" alt="Project 2">
+        <p>Project Title 2</p>
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../BellesSoeurs2010/IMGP2003.JPG" alt="Project 3">
+        <p>Project Title 3</p>
+      </div>
+      <!-- Additional items here -->
+    </div>
+  </section>
+</div>
 <footer>
-  &copy; 2024 Josée Bergeron Proulx. All rights reserved.
+  &copy; 2024 Josée Bergeron-Proulx. Tout droit réservé.
 </footer>
 </body>
 </html>
