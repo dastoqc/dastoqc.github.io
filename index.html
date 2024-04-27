@@ -107,25 +107,57 @@
     }
   }
   
-  /* New Styles for Contact Section */
+  /* Contact Section Styles */
   .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into two columns */
+    align-items: center;
+    gap: 20px;
     padding: 2em;
     background: #f5f5f5; /* Light background for contrast */
   }
-  .contact form {
-    display: flex;
-    flex-direction: column;
+
+  .contact-form {
+    padding: 2em;
+    background: #fff; /* White background for the form */
+    border-radius: 8px; /* Soften the edges */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
   }
-  .contact input,
-  .contact textarea {
-    margin-bottom: 1em;
-    padding: 0.5em;
+
+  .contact-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Soften the edges */
   }
-  .contact input[type="submit"] {
-    background: #2E8B57; /* Button color */
-    color: white;
+
+  /* Contact Form Inputs and Textarea */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .contact-form button {
+    padding: 10px 15px;
+    background-color: #2E8B57; /* Vibrant color for the button */
+    color: #fff;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+  }
+
+  /* Responsive adjustments for Contact section */
+  @media (max-width: 768px) {
+    .contact {
+      grid-template-columns: 1fr; /* Stack image and form on smaller screens */
+    }
+    .contact-form,
+    .contact-image {
+      padding: 1em;
+    }
   }
   
   /* Masonry Grid for Portfolio */
@@ -245,14 +277,21 @@
   </section>
   <!-- Contact Section -->
   <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <form onsubmit="decodeEmail('eHh4Lnh4eEBnbWFpbC5jb20='); return false;"> <!-- Base64 encoded email -->
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <input type="submit" value="Send Message">
-    </form>
-  </section>
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <!-- Form content here -->
+      <form onsubmit="decodeEmail('eHh4Lnh4eEBnbWFpbC5jb20='); return false;"> <!-- Base64 encoded email -->
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message">
+      </form>
+      <!-- The actual form goes here -->
+    </div>
+  <div>
+    <img class="contact-image" src="Ondin2012/contact.JPG" alt="Visual representation related to contacting">
+  </div>
+</section>
 </div>
 <footer>
   &copy; 2024 Josée Bergeron Proulx. All rights reserved.
