@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<title>JBP: Encres Sympathiques</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* assuming a dark theme from the image */
+    color: #fff;
+    padding-top: 60px; /* Offset for sticky header */
+  }
+  .content {
+    padding: 2em;
+  }
+  /* Sticky Navbar Styles */
+  .navbar {
+    background-color: #333; /* A dark background */
+    overflow: hidden;
+    position: fixed; /* Fixed position */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Make sure it's above other items */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20 20px; /* Padding on the sides */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slight shadow for depth */
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2; /* Light text color for the dark background */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  }
+
+  .navbar a.active,
+  .navbar a:hover {
+    background-color: #E59866; /* Vibrant color for active/hover state */
+    color: white;
+  }
+  .feature-image {
+    width: 100%;
+    height: 75vh;
+    background: url('../ArtVisuel2019/home.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .feature-text {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    color: #fff;
+    padding: 1em;
+    max-width: 60%;
+  }
+  footer {
+    padding: 1em;
+    background-color: #222;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  /* About Section Styles */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 20px;
+    padding: 2em;
+    background: #333; /* Dark background for contrast */
+    color: #fff;
+  }
+
+  .about img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Soften the edges */
+  }
+
+  .about-text {
+    font-family: 'Merriweather', serif; /* Creative font */
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em; /* Larger font size for impact */
+    line-height: 1.4; /* Spacing for readability */
+  }
+
+  /* Responsive adjustments for About section */
+  @media (max-width: 768px) {
+    .about {
+      grid-template-columns: 1fr; /* Stack image and text on small screens */
+      text-align: center;
+    }
+  }
+  
+  /* Contact Section Styles */
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into two columns */
+    align-items: center;
+    gap: 20px;
+    padding: 2em;
+    background: #f5f5f5; /* Light background for contrast */
+  }
+
+  .contact-form {
+    padding: 2em;
+    background: #fff; /* White background for the form */
+    border-radius: 8px; /* Soften the edges */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+
+  .contact-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Soften the edges */
+  }
+
+  /* Contact Form Inputs and Textarea */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .contact-form button {
+    padding: 10px 15px;
+    background-color: #2E8B57; /* Vibrant color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Responsive adjustments for Contact section */
+  @media (max-width: 768px) {
+    .contact {
+      grid-template-columns: 1fr; /* Stack image and form on smaller screens */
+    }
+    .contact-form,
+    .contact-image {
+      padding: 1em;
+    }
+  }
+  
+  /* Masonry Grid for Portfolio */
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 16px;
+    padding: 16px;
+  }
+  
+  .grid-item {
+    background-color: #8a8a8a;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px; /* Space at the bottom for when they stack vertically on smaller screens */
+  }
+  
+  /* Different height classes for demonstrating the masonry effect */
+  .grid-item--height1 { grid-row-end: span 1; }
+  .grid-item--height2 { grid-row-end: span 2; }
+  .grid-item--height3 { grid-row-end: span 2; grid-column-end: span 3; }
+  
+  .grid-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .grid-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+  }
+
+  .grid-item p {
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay for text */
+    color: white;
+    margin: 0; /* Remove default paragraph margin */
+  }
+  
+  @media (max-width: 768px) {
+    .masonry-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .navbar a.active,
+    .navbar a:hover {
+      background-color: inherit; /* Mobile tap highlight color */
+    }
+  }
+</style>
+<script>
+  // Simple email protection
+  function decodeEmail(encoded) {
+    var address = atob(encoded);
+    window.location.href = 'mailto:' + address;
+  }
+</script>
+</head>
+<body>
+
+<section class="about" id="about">
+  <img src="../EncresSympathiques2020/ES03.jpg" alt="Encres Syympathiques">
+  <div class="about-text">
+    <h2>Encres Sympathiques</h2>
+    <!-- Portfolio items will be placed here -->
+    <p>L’artiste proposait des installations regroupant des objets sensibles réalisés à partir de matériaux recyclés et extraits de saconception scénographique pour la pièce Au bout du Fil d’Évelyne de la Chenelière,mise en scène par F. Beaulieu-Duchesneau en 2017. De par sa curiosité pour lalittérature et de ses expériences en scénographie, elle propose d’explorer lesinterrelations entre les disciplines ce qui lui permet de créer un brouillage matériel etspatial. Par ses installations, elle se prête à un jeu qui lie le visible à l’invisible etremue la matière retenue de son processus scénographique. Ce télescopagedisciplinaire lui permet d’interroger l’influence des mots sur l’acte de création. Ellesoulève ainsi les problématiques d’interprétation, d’identité textuelle etd’inachèvement du texte littéraire. À noter que la trame musicale réalisée par l’artisteBenoît Côté, intégré à l’oeuvre Usure portée et composé pour le spectacle Au bout dufil, venait envelopper le spectateur dans son expérience de l’exposition.</p>
+    </div>
+</section>
+
+<div class="content">
+  <section id="portfolio">
+    <div class="masonry-grid">
+      <!-- Portfolio items -->
+      <div class="grid-item grid-item--height3">
+        <img src="../EncresSympathiques2020/ES01.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../EncresSympathiques2020/ES02.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height1">
+        <img src="../EncresSympathiques2020/ES03.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../EncresSympathiques2020/ES04.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height2">
+        <img src="../EncresSympathiques2020/ES05.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height2">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5eMEBQF9K1w?si=bpsJwFmEooXZMIVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="grid-item grid-item--height2">
+        <img src="../EncresSympathiques2020/ES06.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../EncresSympathiques2020/ES07.jpg" alt="Encres Smpathiques">
+      </div>
+      <div class="grid-item grid-item--height3">
+        <img src="../EncresSympathiques2020/ES08.jpg" alt="Encres Smpathiques">
+      </div>
+      <!-- Additional items here -->
+    </div>
+  </section>
+</div>
+<footer>
+  &copy; 2024 Josée Bergeron-Proulx. Tout droit réservé.
+</footer>
+</body>
+</html>
